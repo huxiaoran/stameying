@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
 
@@ -143,7 +144,19 @@ public String getWord(int index)
 return this.library.get(index);	
 }
 
+public void printLibrary()
+{
+System.out.println("--------CURRENT LIBRARY---------");
+Iterator iter = this.library.keySet().iterator();
+while (iter.hasNext())
+{
+int key = (Integer) iter.next();
+String value = this.library.get(key);
+System.out.println(key + " : " + value);
+}
+}
 
+/*
 public void printIndexString()
 {
 	String output = "";
@@ -158,8 +171,31 @@ for (int i= 0; i < result.size() ; i++)
 }
 System.out.println("Incoming String becomes " +  output );
 }
-
-
+*/
+/*
+ * for testing
+ * 
+*/
+/*
+public static void main(String[] args)
+{
+getIndexWord giw = new getIndexWord();
+String input = "Parallel and distributed computing, data intensive computing, grid computing, compilers";
+giw.indexString(input);
+giw.printLibrary();
+giw.indexString(input);
+giw.printLibrary();
+String input2 = "Fault-tolerance, distributed systems, concurrency semantics";
+giw.indexString(input2);
+giw.printLibrary();
+String input3 = "Real-time computing and communication, network security, distributed systems";
+giw.indexString(input3);
+giw.printLibrary();
+String input4 = "Parallel and distributed computing, concurrency semantics, distributed systems";
+giw.indexString(input4);
+giw.printLibrary();
+}
+*/
 
 	
 }
